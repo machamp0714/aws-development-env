@@ -10,3 +10,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
   availability_zone       = "ap-northeast-1a"
 }
+
+resource "aws_internet_gateway" "ig" {
+  vpc_id = aws_vpc.vpc.id
+}
